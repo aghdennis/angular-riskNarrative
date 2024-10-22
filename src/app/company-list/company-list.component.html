@@ -1,0 +1,27 @@
+<div class="content">
+    <h4>SEARCH RESULTS</h4>
+    <div> 
+        <ng-container *ngIf="companySearchResults.length > 0; else alt">
+            <div *ngFor="let result of companySearchResults | slice: startIndex : endIndex" class=" mb-3" >
+                <div class="row h-100 justify-content-center">
+                <div>
+                        <a href="#" [routerLink]="['/details', result.number]" >{{result.name | uppercase }} </a>
+                </div>
+                <div>           
+                        <span class="companyNumber">{{result.number}}</span> - <span>Incorporated on </span> {{result.dateIncorporated | date: 'mediumDate' }}          
+                </div>
+                <div>           
+                        <span>{{ result.address}}</span>            
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #alt>
+            <span>No data to display</span>
+        </ng-template>
+    </div>
+    <div>
+        <button type="button" (click)="previousPage()" [disabled]="startIndex == 0 ? 'disabled' : ''" >Previous</button>
+        <button type="button" (click)="nextPage()" [disabled]="endIndex > pageSize ?  'disabled' : ''">Next</button>
+    </div>
+</div>

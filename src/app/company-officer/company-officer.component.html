@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="row"> 
+        <div class="col-12">
+            <h4> {{officer.companyName | uppercase }} </h4> - <label>Officers</label>
+        </div>  
+        <div class="col-12">
+            <span>Company number</span> <span class="companyNumber"> {{officer.companyNumber}}</span>
+        </div>            
+    </div>
+    <div class="mb-3"></div>
+    <div class="mb-3" *ngFor="let item of officer.officers"> 
+        <div class="row">           
+            <div class="col-12">{{item.name}}</div>  
+        </div>
+        <div class="row">            
+            <div class="col-12">{{item.role}}</div> 
+        </div>           
+    </div>   
+</div>

@@ -1,0 +1,43 @@
+
+
+<div class="content">
+    <div class="row mb-3"> 
+        <div class="col-12">
+            <h4> {{companyDetail.name | uppercase }} </h4>
+        </div>  
+        <div class="col-6">
+            <span>Company number </span>  <span class="companyNumber">{{companyDetail.number}}</span>
+        </div>            
+    </div>
+    <div class="row mb-3">                
+        <div class="col-6">
+            <span>Registered office address </span>  
+            <span>{{companyDetail.address}}</span>
+        </div>       
+    </div>
+
+    <div class="row mb-3">                
+        <div class="col-6">
+            <span>Company status </span>  
+            <b>{{companyDetail.status | titlecase}}</b>
+        </div>       
+    </div>
+   
+    <div class="row mb-3">                
+        <div class="col-6">
+            <span>Company type </span>  
+            <span>{{companyDetail.type }}</span>
+        </div>       
+    </div>
+
+    <div class="row mb-3">                
+        <div class="col-6">
+            <span>Incorporated on </span>  
+            <span>{{companyDetail.dateIncorporated | date: 'mediumDate'}}</span>
+        </div>       
+    </div>
+
+    <div class="row">
+        <a href="#" [routerLink]="['/officers/', companyDetail.number, companyDetail.name]">List of Officers</a>
+    </div>
+</div>
